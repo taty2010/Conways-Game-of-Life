@@ -1,13 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './components/intro/home'
+import './index.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       Conways Game of Life
-      </header>
+     <Home/>
     </div>
   );
 }
