@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './components/intro/Home'
+import Home from './components/intro/home'
 import './index.scss';
 import Game from './components/Game/Grid'
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
