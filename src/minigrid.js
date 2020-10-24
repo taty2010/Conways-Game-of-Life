@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef, useCallback} from 'react';
-import '../../index.scss'
+import './index.scss'
 import produce from 'immer';
 const MiniGrid = () => {
 

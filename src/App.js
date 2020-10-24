@@ -1,7 +1,7 @@
 import React from 'react';
-import Home from './components/intro/home'
+import Home from './home'
 import './index.scss';
-import Game from './components/game/grid'
+import Game from './grid'
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
 
 function App() {

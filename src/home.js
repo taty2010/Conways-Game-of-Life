@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import MiniGrid from '../game/minigrid';
+import MiniGrid from './minigrid';
 import { Link } from 'react-router-dom'
 
 const Home = () => {
