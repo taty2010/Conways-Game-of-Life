@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef, useCallback} from 'react';
 import '../../index.scss'
 import produce from 'immer';
 import {Link } from 'react-router-dom'
-import {BttnStart, BttnClear, BttnSteps, BttnRandom, DarkMode, Shape, Time} from './Buttons';
+import {BttnStart, BttnClear, BttnSteps, BttnRandom, DarkMode, Shape, Time} from './buttons';
 
 const Grid = () => {
 

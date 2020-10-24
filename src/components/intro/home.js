@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Grid from '../Game/Grid';
-import MiniGrid from '../Game/Minigrid';
+import Grid from '../Game/grid';
+import MiniGrid from '../Game/minigrid';
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router-dom'
 
 const Home = () => {
