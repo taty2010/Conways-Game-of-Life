@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import Grid from '../Game/grid';
-import MiniGrid from '../Game/minigrid';
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router-dom'
+import MiniGrid from '../game/minigrid';
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -24,9 +23,6 @@ const Home = () => {
         </ol>
         <button><Link to='/Game'>Play Game</Link></button>
       </div>
-      {/* <div className="grid-wrapper">
-        <Grid/>
-      </div> */}
     </div>
   )
 
