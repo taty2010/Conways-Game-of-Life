@@ -9,6 +9,7 @@ const Grid = () => {
   const[row, setRow] = useState(35)
   const[col, setcol] = useState(35)
   let[gen, setGen] = useState(0)
+  let[gen2, setGen2] = useState(0)
   const[start, setStart] = useState(false)
   const [dark, setDark] = useState(false)
   const [shape, setShape] = useState(false)
@@ -62,6 +63,7 @@ const Grid = () => {
               gridCopy[i][k] = 0;
             } else if (g[i][k] === 0 && neighbors === 3){
               gridCopy[i][k] = 1;
+              setGen2(gen2 += 1)
             }
           }
         }
@@ -69,8 +71,8 @@ const Grid = () => {
   });
 
     setTimeout(runSimulation, time);
-    setInterval(setGen(gen += 1), time)
-  }, [time]);
+    setGen(gen += 1)
+  }, [time, gen, setGen, setGen2, gen2]);
 
   return(
     <>
@@ -80,7 +82,7 @@ const Grid = () => {
       {!running ? (
       <span className="count">{gen}</span>
       ) : (
-        <span className="countAnimation">{gen}</span>
+        <span className="countAnimation">{gen < gen2 ? gen : gen2}</span>
       )
       
       }
@@ -91,7 +93,9 @@ const Grid = () => {
       running={running}
       runSimulation={runSimulation}
       setGen={setGen}
+      setGen2={setGen2}
       gen={gen}
+      gen2={gen2}
       />
       <BttnStart
         start={start}
@@ -107,12 +111,14 @@ const Grid = () => {
       setStart={setStart}
       EmptyGrid={EmptyGrid}
       setGen={setGen}
+      setGen2={setGen2}
       running={running}
       setRunning={setRunning}
       />
       <BttnClear
         setGrid={setGrid}
         setGen={setGen}
+        setGen2={setGen2}
         setStart={setStart}
         EmptyGrid={EmptyGrid}
         running={running}
@@ -129,7 +135,7 @@ const Grid = () => {
     </div>
 
     <div id='container'>
-      {grid.map((rows, i) => 
+    {grid.map((rows, i) => 
         rows.map((col, k) => 
         !dark ?(
           <div
@@ -148,15 +154,16 @@ const Grid = () => {
          ) : (
           <div
           onClick={() => {
+            if(!running){
             const newGrid = produce(grid, gridCopy => {
                 gridCopy[i][k] = grid[i][k] ? 0 : 1;
             });
             setGrid(newGrid)
-            setStart(true)
+            setStart(true)}
           }}
           key={`${i}-${k}`}
           id='cells'
-          className={ `boxes ${grid[i][k] ? 'alive': 'deadDark' }
+          className={ `boxes ${grid[i][k] ? 'aliveDark': 'deadDark' }
           ${shape ? 'square' : 'round'}`}
          ></div>
          )

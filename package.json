@@ -20,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
+    "resolve-url-loader": "^3.1.2",
     "sass": "^1.27.0"
   },
   "scripts": {

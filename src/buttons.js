@@ -5,7 +5,7 @@ return(
   <button onClick={() =>{
     setRunning(!running);
     runSimulation()
-    setGen(gen + 1)
+    // setGen(gen + 1)
   }}>Steps
   </button>
 )
@@ -30,6 +30,7 @@ return(
   <button onClick={() =>{
     props.setGrid(props.EmptyGrid())
     props.setGen(0)
+    props.setGen2(0)
     props.setStart(false)
     if(props.running){
       props.setRunning(!props.running);
@@ -42,10 +43,12 @@ return(
 )
 }
 
-export const BttnRandom = (props) => {
+export const BttnRandom = (props, {setGen, setGen2}) => {
   return(
     <button onClick={() =>{
       const rows = [];
+      props.setGen(0)
+      props.setGen2(0)
       for(let r = 0; r < props.row; r++){
         rows.push(
           Array.from(Array(props.col), () => Math.random() > 0.5 ? 1 : 0));
@@ -56,6 +59,7 @@ export const BttnRandom = (props) => {
         props.setRunning(!props.running);
         // props.setGrid(props.EmptyGrid())
         props.setGen(0)
+        props.setGen2(0)
       }
 }}>
     Random
