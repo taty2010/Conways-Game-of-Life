@@ -77,7 +77,7 @@ const Grid = () => {
   return(
     <>
     <div className="options">
-      <Link to='/'>Home</Link>
+      <Link to='/' className="home"><i className="fas fa-home"></i></Link>
     <h2>Generations: 
       {!running ? (
       <span className="count">{gen}</span>
