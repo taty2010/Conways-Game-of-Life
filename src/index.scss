@@ -1,0 +1,210 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+body {
+  margin: 0;
+  background: #ca9ed0;
+  background-image: linear-gradient(95deg, #ca9ed0bd, #e07fa7bf), url('./img/light.jpg');
+}
+
+h1{
+  margin: 20px 0;
+  font-size: 8vw;
+  font-family: 'Righteous', cursive;
+  color: #ca9ed0;
+  text-shadow: -5px -5px 5px rgba(200, 216, 198, 0.54), 5px 5px 5px rgba(171, 20, 191, 0.67);
+}
+h2{
+  margin: 20px 0;
+  font-size: 4vw;
+  font-family: 'Righteous', cursive;
+  // color: #ca9ed0;
+  // text-shadow: -5px -5px 5px rgba(200, 216, 198, 0.54), 5px 5px 5px rgba(171, 20, 191, 0.67);
+}
+p{
+  font-size: 2vw;
+}
+
+.content{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  .instructions{
+    background: #c5addc47;
+    padding: 2%;
+    margin: 10%;
+    border-radius: 25px;
+    box-shadow: -4px -5px 20px 0px #f4cdf96e, 5px 5px 20px #78517d70;
+  }
+}
+
+.gameContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  h2{
+    color: #c4d5d5;
+    text-shadow: 5px 5px 5px rgba(182, 67, 197, 0.5);
+  }
+}
+
+.options{
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+  width: 30vw;
+  margin-right: 10%;
+
+}
+
+button{
+  border: none;
+  margin:1%;
+  padding: 2%;
+  width: 10vw;
+  border-radius: 25px;
+  font-size: 1vw;
+  font-family: 'Righteous', cursive;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+  
+  background-color: #c4d5d5b3;
+  &:hover{
+    box-shadow: -3px -5px 7px rgba(244, 194, 251,0.28), 7px 5px 8px rgba(147, 109, 152, 0.52);
+    background-color: #ca9ed0;
+    color: #c4d5d5;
+  }
+}
+
+.home i{
+  font-size: 2vw;
+  color: #c8c3d2;
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
+.count{
+  padding-left: 3%;
+  color: #ca9ed0;
+  text-shadow: -5px -5px 5px rgba(200, 216, 198, 0.54), 5px 5px 5px rgba(171, 20, 191, 0.67);
+}
+
+.countAnimation{
+  animation-name: nums;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes nums {
+  from {color: #ca9ed0; text-shadow: -5px -5px 5px rgba(200, 216, 198, 0.54), 5px 5px 5px rgba(171, 20, 191, 0.67);}
+  to {color: #ca9ed0; text-shadow: -5px -5px 5px rgba(200, 216, 198, 0.2), 5px 5px 5px rgba(171, 20, 191, 0.2);}
+}
+
+.darkmode{
+  background-image: linear-gradient(95deg, #262a35c9, #262a35c7), url('./img/dark.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.light{
+  background-image: linear-gradient(95deg, #ca9ed0bd, #e07fa7bf), url('./img/light.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-wrapper{
+//   width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+#minicontainer{
+  display: grid;
+  grid-gap: 0.2em;
+  // grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(6, 20px);
+  grid-auto-flow: column;
+}
+
+
+#container{
+  display: grid;
+  grid-gap: 0.2em;
+  // grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(35, 20px);
+  grid-auto-flow: column;
+}
+
+.show{
+  display: block
+}
+
+.hide{
+  display:none;
+}
+
+.boxes{
+  height: 15px;
+  width: 15px;
+  background:purple;
+}
+
+.alive{
+  height: 20px;
+  width: 20px;
+  background: #782e8273;
+  box-shadow: inset 5px 5px 8px rgba(82,4,88,0.67), 2px 1px 1px rgba(255,255, 255,0.40);
+}
+
+.aliveDark{
+  background: #2127397a;
+  box-shadow: inset 5px 5px 8px #07080bc9, 2px 1px 1px #dd606073;
+}
+
+.square{
+  border-radius: 3px;
+}
+
+.round{
+  border-radius: 25px;
+}
+
+.dead{
+  height: 20px;
+  width: 20px;
+  background: #ca9ed045;
+  box-shadow: -2px -3px 5px 0px rgba(246, 176, 255, 0.43), 5px 5px 8px rgba(120, 81, 125, 0.61);
+  &:hover{
+    background: #782e8273;
+    box-shadow: inset 5px 5px 8px rgba(82,4,88,0.67), 2px 1px 1px rgba(255,255, 255,0.40);
+  }
+}
+
+.deadDark {
+  height: 20px;
+  width: 20px; 
+  background: #262a3500;
+  box-shadow: inset 5px 2px 7px 0px rgba(99, 105, 121, 0.11), 5px 5px 8px rgba(0, 0, 0,0.41);
+  &:hover{
+    background: #2127397a;
+    box-shadow: inset 5px 5px 8px #07080bc9, 2px 1px 1px #dd606073;
+  }
+}
+
+.times{
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 10%;
+}
+
+// .grid-item{
+//   padding: 1em;
+//   border: 1px solid #ddd;
+//   text-align:center
+// }
